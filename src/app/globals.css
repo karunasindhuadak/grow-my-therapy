@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Alex+Brush&family=Allura&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
@@ -25,40 +24,38 @@
   /* Fonts */
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-sans: var(--font-muli), var(--font-inter), system-ui, sans-serif;
-  --font-muli: var(--font-muli), 'Mulish', 'Muli', system-ui, sans-serif;
   --font-heading: var(--font-cormorant), Georgia, serif;
   --font-script: 'PrintedMoments', cursive;
   --font-printed: 'PrintedMoments', cursive;
 
   /* Brand Colors */
-  --color-primary-light: #3A8F90;
-  --color-primary-dark: #1E4F50;
+  --color-primary-light: #a5c4c4;
+  --color-primary-dark: #577c7c;
 
-  --color-secondary-light: #FAF6F1;
-  --color-secondary-dark: #E8DDD0;
+  --color-secondary-light: #fcf4ee;
+  --color-secondary-dark: #f2d9ca;
 
-  --color-accent-light: #D4B97E;
-  --color-accent-dark: #B8955A;
+  --color-accent-light: #f2d9ca;
+  --color-accent-dark: #86b3b3;
 
   /* Neutrals */
-  --color-neutral-900: #2D2D2D;
-  --color-neutral-700: #4A4A4A;
-  --color-neutral-500: #6B6B6B;
-  --color-neutral-300: #A0A0A0;
-  --color-neutral-100: #F5F5F3;
-  --color-neutral-50: #FAFAF7;
+  --color-neutral-900: #2b2b2b;
+  --color-neutral-700: #515151;
+  --color-neutral-500: #5c605e;
+  --color-neutral-300: #8a8c8b;
+  --color-neutral-100: #f6f4ee;
+  --color-neutral-50: #ffffff;
 
   /* Layout & Spacing */
   --spacing-section: 5rem;
   --spacing-section-sm: 3rem;
-  --max-width-container: 1200px;
+  --max-width-container: 1800px;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-muli), var(--font-inter), system-ui, sans-serif;
-  --font-muli: var(--font-muli), 'Mulish', 'Muli', system-ui, sans-serif;
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-cormorant), Georgia, serif;
@@ -103,38 +100,38 @@
 }
 
 :root {
-  --background: #F5EDE3;
-  --foreground: #2D2D2D;
-  --card: #FAF6F1;
-  --card-foreground: #2D2D2D;
-  --popover: #FAF6F1;
-  --popover-foreground: #2D2D2D;
-  --primary: #2C6E6F;
+  --background: #fcf4ee;
+  --foreground: #2b2b2b;
+  --card: #ffffff;
+  --card-foreground: #2b2b2b;
+  --popover: #ffffff;
+  --popover-foreground: #2b2b2b;
+  --primary: #86b3b3;
   --primary-foreground: #FFFFFF;
-  --secondary: #E8DDD0;
-  --secondary-foreground: #2D2D2D;
-  --muted: #EAE6DE;
-  --muted-foreground: #6B6B6B;
-  --accent: #C9A96E;
-  --accent-foreground: #2D2D2D;
+  --secondary: #f2d9ca;
+  --secondary-foreground: #2b2b2b;
+  --muted: #f6f4ee;
+  --muted-foreground: #5c605e;
+  --accent: #f2d9ca;
+  --accent-foreground: #2b2b2b;
   --destructive: #B91C1C;
-  --border: #D8D0C5;
-  --input: #D8D0C5;
-  --ring: #2C6E6F;
-  --radius: 0.625rem;
-  --chart-1: #2C6E6F;
-  --chart-2: #3A8F90;
-  --chart-3: #C9A96E;
-  --chart-4: #E8DDD0;
-  --chart-5: #2D2D2D;
-  --sidebar: #FAF6F1;
-  --sidebar-foreground: #2D2D2D;
-  --sidebar-primary: #2C6E6F;
+  --border: #d6d0ca;
+  --input: #d6d0ca;
+  --ring: #86b3b3;
+  --radius: 0.125rem;
+  --chart-1: #86b3b3;
+  --chart-2: #f2d9ca;
+  --chart-3: #2b2b2b;
+  --chart-4: #fcf4ee;
+  --chart-5: #5c605e;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #2b2b2b;
+  --sidebar-primary: #86b3b3;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #E8DDD0;
-  --sidebar-accent-foreground: #2D2D2D;
-  --sidebar-border: #D8D0C5;
-  --sidebar-ring: #2C6E6F;
+  --sidebar-accent: #f2d9ca;
+  --sidebar-accent-foreground: #2b2b2b;
+  --sidebar-border: #d6d0ca;
+  --sidebar-ring: #86b3b3;
 }
 
 .dark {
@@ -175,12 +172,28 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground font-sans;
+    font-weight: 300;
+    line-height: 1.8;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: var(--font-serif);
+    font-family: var(--font-heading);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  h1 strong em, h2 strong em, h3 strong em, h4 strong em, h5 strong em, h6 strong em {
+    font-family: 'PrintedMoments', cursive;
+    font-style: normal;
+    font-weight: 400;
   }
 }
 
-.font-script { font-family: 'Sacramento', 'Allura', 'Alex Brush', cursive !important; font-style: normal !important; }
+.font-script,
+.font-printed {
+  font-family: 'PrintedMoments', cursive !important;
+  font-style: normal !important;
+}

@@ -35,7 +35,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-US">
       <body
         className={`${cormorant.variable} ${inter.variable} ${mulish.variable} font-sans antialiased`}
       >
