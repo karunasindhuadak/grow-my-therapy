@@ -1,17 +1,34 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Alex+Brush&family=Allura&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&family=Alex+Brush&family=Allura&display=swap');
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
+
+@font-face {
+  font-family: 'PrintedMoments';
+  src: url('/fonts/printedmoments-webfont.woff') format('woff');
+  font-weight: 300 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Muli';
+  src: local('Mulish'), local('Muli');
+  font-weight: 300 400 500 600 700;
+  font-style: normal;
+  font-display: swap;
+}
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   /* Fonts */
   --font-serif: var(--font-cormorant), Georgia, serif;
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-muli), var(--font-inter), system-ui, sans-serif;
+  --font-muli: var(--font-muli), 'Mulish', 'Muli', system-ui, sans-serif;
   --font-heading: var(--font-cormorant), Georgia, serif;
-  --font-script: var(--font-alex-brush), cursive;
-  --font-script: var(--font-alex-brush), cursive;
+  --font-script: 'PrintedMoments', cursive;
+  --font-printed: 'PrintedMoments', cursive;
 
   /* Brand Colors */
   --color-primary-light: #3A8F90;
@@ -40,11 +57,13 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-sans: var(--font-muli), var(--font-inter), system-ui, sans-serif;
+  --font-muli: var(--font-muli), 'Mulish', 'Muli', system-ui, sans-serif;
   --font-serif: var(--font-cormorant), Georgia, serif;
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-cormorant), Georgia, serif;
-  --font-script: var(--font-alex-brush), cursive;
+  --font-script: 'PrintedMoments', cursive;
+  --font-printed: 'PrintedMoments', cursive;
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);

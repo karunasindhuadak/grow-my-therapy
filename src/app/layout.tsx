@@ -1,5 +1,5 @@
-﻿import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter, Mulish } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/sections/Navbar";
 
@@ -14,6 +14,13 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-inter",
+  display: "swap",
+});
+
+const mulish = Mulish({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-muli",
   display: "swap",
 });
 
@@ -38,12 +45,12 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Sacramento&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600&family=Sacramento&family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap"
           rel="stylesheet"
         />
       </head>
       <body
-        className={`${cormorant.variable} ${inter.variable} font-sans antialiased`}
+        className={`${cormorant.variable} ${inter.variable} ${mulish.variable} font-sans antialiased`}
       >
         <Navbar />
         {children}
