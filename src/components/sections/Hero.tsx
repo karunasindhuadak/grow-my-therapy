@@ -1,15 +1,15 @@
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
-import { homepage, homepageLinks } from "@/data/homepage";
+import { mayaHomepage, mayaLinks } from "@/data/maya";
 import { cn } from "@/lib/utils";
 
 export default function Hero() {
-  const content = homepage.hero;
+  const content = mayaHomepage.hero;
 
   return (
     <section
       aria-labelledby="hero-heading"
-      className="overflow-hidden bg-[#fcf4ee] text-[#2b2b2b]"
+      className="overflow-hidden bg-[#f7f8f4] text-[#263a43]"
     >
       <div className="mx-auto grid max-w-[2000px] grid-cols-[minmax(0,1fr)_18%] gap-x-[10%] gap-y-10 pt-8 pb-10 md:grid-cols-[35%_45%_8%] md:gap-x-[6%] md:gap-y-0 md:pt-[3vw] md:pb-[6vw]">
         <div className="col-span-2 px-[6vw] md:col-span-1 md:col-start-2 md:row-start-1 md:flex md:flex-col md:px-0">
@@ -22,7 +22,7 @@ export default function Hero() {
               className="font-heading text-[clamp(2.5rem,4.2vw,5rem)] leading-[1.08] font-light"
             >
               {content.heading}{" "}
-              <span className="font-printed font-normal text-[#86b3b3]">
+              <span className="font-printed font-normal text-[#6f9294]">
                 {content.emphasis}
               </span>
               .
@@ -31,10 +31,10 @@ export default function Hero() {
               {content.description}
             </p>
             <a
-              href={homepageLinks.contact}
+              href={mayaLinks.services}
               className={cn(
                 buttonVariants({ variant: "link" }),
-                "mt-6 h-auto min-h-11 max-w-full rounded-none border-0 border-b border-[#515151] px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#2b2b2b] uppercase no-underline hover:border-transparent hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b] motion-reduce:transition-none",
+                "mt-6 h-auto min-h-11 max-w-full rounded-none border-0 border-b border-[#60767c] px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase no-underline hover:border-transparent hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] motion-reduce:transition-none",
               )}
             >
               {content.action}
@@ -54,7 +54,7 @@ export default function Hero() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[#f2d9ca]/7"
+            className="pointer-events-none absolute inset-0 bg-[#dfc2b6]/12"
           />
         </div>
 
@@ -68,7 +68,7 @@ export default function Hero() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[#f2d9ca]/14"
+            className="pointer-events-none absolute inset-0 bg-[#b9d0d1]/18"
           />
         </div>
       </div>

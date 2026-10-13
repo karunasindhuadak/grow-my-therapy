@@ -1,14 +1,14 @@
 import Image from "next/image";
-import { homepage } from "@/data/homepage";
+import { mayaHomepage } from "@/data/maya";
 
 export default function Welcome() {
-  const content = homepage.welcome;
+  const content = mayaHomepage.welcome;
 
   return (
     <section
       id="welcome"
       aria-labelledby="welcome-heading"
-      className="bg-[#fcf4ee] py-16 text-[#2b2b2b] md:py-[7vw]"
+      className="bg-[#f7f8f4] py-16 text-[#263a43] md:py-[7vw]"
     >
       <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-y-8 px-[6vw] md:grid-cols-[minmax(0,29fr)_minmax(0,29fr)_minmax(0,32fr)] md:gap-x-[3%] md:gap-y-12 md:pr-0 md:pl-[9vw]">
         <h2
@@ -37,7 +37,7 @@ export default function Welcome() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[#f2d9ca]/18"
+            className="pointer-events-none absolute inset-0 bg-[#b9d0d1]/18"
           />
         </div>
 

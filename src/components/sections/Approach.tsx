@@ -1,16 +1,15 @@
 import Image from "next/image";
-import { buttonVariants } from "@/components/ui/button";
-import { homepage, specialties } from "@/data/homepage";
-import { cn } from "@/lib/utils";
+import { mayaHomepage, mayaMethods } from "@/data/maya";
 
 export default function Approach() {
-  const content = homepage.honoring;
+  const content = mayaHomepage.honoring;
 
   return (
     <>
       <section
-        aria-labelledby="honoring-heading"
-        className="bg-white py-16 text-[#2b2b2b] md:py-[6.6vw]"
+        id="approach"
+        aria-labelledby="approach-heading"
+        className="bg-[#f7f8f4] py-16 text-[#263a43] md:py-[6.6vw]"
       >
         <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-y-9 md:grid-cols-[55%_40%] md:gap-x-[5%]">
           <div className="relative ml-[6vw] aspect-[1.62] overflow-hidden md:ml-0">
@@ -23,64 +22,49 @@ export default function Approach() {
             />
             <div
               aria-hidden="true"
-              className="pointer-events-none absolute inset-0 bg-white/11"
+              className="pointer-events-none absolute inset-0 bg-[#b9d0d1]/11"
             />
           </div>
 
           <h2
-            id="honoring-heading"
+            id="approach-heading"
             className="px-[6vw] font-heading text-[clamp(2rem,3.25vw,4rem)] leading-[1.15] font-light md:self-end md:pr-[5vw] md:pl-0"
           >
             {content.firstLine}{" "}
-            <span className="font-printed font-normal text-[#86b3b3]">&amp;</span>{" "}
-            {content.secondLine}
+            <span className="font-printed font-normal text-[#6f9294]">{content.secondLine}</span>
           </h2>
         </div>
       </section>
 
       <section
-        id="specialties"
-        aria-labelledby="specialties-heading"
-        className="bg-white px-[6vw] pt-8 pb-16 text-[#2b2b2b] md:px-[9vw] md:pt-[4vw] md:pb-[7vw]"
+        aria-labelledby="methods-heading"
+        className="bg-[#f7f8f4] px-[6vw] pt-8 pb-16 text-[#263a43] md:px-[9vw] md:pt-[4vw] md:pb-[7vw]"
       >
         <div className="mx-auto grid max-w-[1640px] grid-cols-1 gap-y-10 md:grid-cols-[minmax(0,30fr)_minmax(0,70fr)] md:gap-x-[5%]">
           <h2
-            id="specialties-heading"
+            id="methods-heading"
             className="max-w-[20rem] font-heading text-[clamp(2rem,2.75vw,3.5rem)] leading-[1.2] font-light"
           >
-            Our{" "}
-            <span className="font-printed font-normal text-[#86b3b3]">
-              specialties
-            </span>{" "}
-            include…
+            A grounded, collaborative{" "}
+            <span className="font-printed font-normal text-[#6f9294]">approach</span>
           </h2>
 
           <div className="grid grid-cols-1 gap-x-9 gap-y-12 md:grid-flow-col md:grid-cols-2 md:grid-rows-2 md:gap-y-16">
-            {specialties.map((specialty) => (
+            {mayaMethods.map((method) => (
               <article
-                key={specialty.id}
-                aria-labelledby={`specialty-${specialty.id}`}
+                key={method.id}
+                aria-labelledby={`method-${method.id}`}
                 className="flex min-w-0 flex-col items-start"
               >
                 <h3
-                  id={`specialty-${specialty.id}`}
+                  id={`method-${method.id}`}
                   className="mb-5 font-heading text-[clamp(1.6rem,2.1vw,2.5rem)] leading-[1.2] font-light"
                 >
-                  {specialty.title}
+                  {method.title}
                 </h3>
-                <p className="mb-6 text-[16px] leading-[1.8] font-light">
-                  {specialty.description}
+                <p className="text-[16px] leading-[1.8] font-light">
+                  {method.description}
                 </p>
-                <a
-                  href={specialty.href}
-                  aria-label={`Learn more about ${specialty.title}`}
-                  className={cn(
-                    buttonVariants({ variant: "link" }),
-                    "mt-auto h-auto min-h-11 max-w-full rounded-none border-0 border-b border-[#515151] px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#2b2b2b] uppercase no-underline hover:border-transparent hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b] motion-reduce:transition-none",
-                  )}
-                >
-                  Learn more
-                </a>
               </article>
             ))}
           </div>

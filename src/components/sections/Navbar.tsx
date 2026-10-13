@@ -1,80 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { mayaLinks } from "@/data/maya";
 
-const LOGO_SRC = "/images/original/Conejo-Valley-Counseling-Logo.png";
-
-const navigationFolders = [
-  {
-    id: "our-team",
-    label: "Our Team",
-    href: "/our-team",
-    items: [
-      { label: "Jennifer Anderson, LMFT", href: "/jennifer-anderson" },
-      { label: "Candace Bletscher, AMFT", href: "/candace-bletscher" },
-      {
-        label: "Heather Williams-Baumgart, AMFT",
-        href: "/heather-williams-baumgart",
-      },
-      { label: "Samantha Johnson, AMFT", href: "/samantha-johnson" },
-      { label: "Autumn Bodily, AMFT", href: "/autumn-bodily" },
-      { label: "Rosa Gomez, AMFT", href: "/rosa-gomez" },
-      { label: "Chad Flores, AMFT", href: "/chad-flores" },
-      { label: "Simran Sidhu, AMFT", href: "/simran-sidhu" },
-      { label: "Jessica Jauregui, MA, AMFT", href: "/jessica-jauregui" },
-    ],
-  },
-  {
-    id: "specialties",
-    label: "Specialties",
-    href: "/specialties",
-    items: [
-      {
-        label: "Dissociation",
-        href: "/dissociative-identity-disorder-therapist-newbury-park",
-      },
-      { label: "Trauma", href: "/trauma-counseling-newbury-park" },
-      {
-        label: "Special Needs Parenting",
-        href: "/counseling-special-needs-parents-newbury-park",
-      },
-      { label: "Couples", href: "/couples-therapy" },
-      { label: "Children & Teens", href: "/children-and-teens" },
-      { label: "Anxiety & Depression", href: "/anxiety-depression" },
-      { label: "Adoption", href: "/adoption-therapy-ventura-county-ca" },
-    ],
-  },
-  {
-    id: "methods",
-    label: "Methods",
-    href: "/methods",
-    items: [
-      { label: "EMDR", href: "/emdr-therapy-newbury-park" },
-      { label: "Brainspotting", href: "/brainspotting" },
-      { label: "Somatic Therapy", href: "/somatic-therapy" },
-      { label: "Parts Work Therapy", href: "/parts-work-therapy" },
-    ],
-  },
+const navigationItems = [
+  { label: "About", href: mayaLinks.about },
+  { label: "Services", href: mayaLinks.services },
+  { label: "Approach", href: mayaLinks.approach },
+  { label: "Our Office", href: mayaLinks.office },
+  { label: "FAQs", href: mayaLinks.faqs },
 ] as const;
-
-function DownArrow({ className = "" }: { className?: string }) {
-  return (
-    <svg
-      aria-hidden="true"
-      className={className}
-      viewBox="0 0 22 22"
-      fill="none"
-      stroke="currentColor"
-      strokeLinecap="square"
-      strokeLinejoin="miter"
-      strokeWidth="1"
-    >
-      <path d="M18 7 11 14 4 7" />
-    </svg>
-  );
-}
 
 function CloseIcon({ className = "" }: { className?: string }) {
   return (
@@ -108,25 +43,24 @@ function MenuIcon({ className = "" }: { className?: string }) {
   );
 }
 
+function Wordmark({ mobile = false }: { mobile?: boolean }) {
+  return (
+    <span className={`flex flex-col ${mobile ? "max-w-[14rem]" : "max-w-[19rem]"}`}>
+      <span className="font-heading text-[clamp(1.3rem,2.1vw,2rem)] leading-none font-medium tracking-[0.01em]">
+        Dr. Maya Reynolds, PsyD
+      </span>
+      <span className="mt-2 text-[9px] leading-[1.4] font-medium tracking-[0.16em] uppercase">
+        Licensed Clinical Psychologist
+      </span>
+    </span>
+  );
+}
+
 export default function Navbar() {
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileFolder, setMobileFolder] = useState<string | null>(null);
-  const desktopNavRef = useRef<HTMLElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
   const closeButtonRef = useRef<HTMLButtonElement>(null);
   const menuTriggerRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    const handlePointerDown = (event: MouseEvent) => {
-      if (!desktopNavRef.current?.contains(event.target as Node)) {
-        setOpenDropdown(null);
-      }
-    };
-
-    document.addEventListener("mousedown", handlePointerDown);
-    return () => document.removeEventListener("mousedown", handlePointerDown);
-  }, []);
 
   useEffect(() => {
     if (!mobileMenuOpen) return;
@@ -138,16 +72,16 @@ export default function Navbar() {
     const handleKeyDown = (event: globalThis.KeyboardEvent) => {
       if (event.key === "Escape") {
         setMobileMenuOpen(false);
-        setMobileFolder(null);
         menuTriggerRef.current?.focus();
+        return;
       }
 
       if (event.key !== "Tab" || !mobileMenuRef.current) return;
 
       const focusableElements = Array.from(
         mobileMenuRef.current.querySelectorAll<HTMLElement>(
-          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
-        )
+          'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+        ),
       );
       if (focusableElements.length === 0) return;
 
@@ -172,108 +106,41 @@ export default function Navbar() {
 
   const closeMobileMenu = () => {
     setMobileMenuOpen(false);
-    setMobileFolder(null);
     menuTriggerRef.current?.focus();
-  };
-
-  const openMobileMenu = () => {
-    setOpenDropdown(null);
-    setMobileMenuOpen(true);
   };
 
   return (
     <>
-      <header className="relative z-40 bg-[#fcf4ee] text-[#2b2b2b]">
+      <header className="relative z-40 bg-[#f7f8f4] text-[#263a43]">
         <div className="mx-auto flex min-h-[106px] max-w-[1500px] items-center gap-4 px-[5vw] md:min-h-[118px] md:gap-6 md:px-[4vw]">
-          <Link
-            href="/"
-            className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b]"
-            aria-label="Conejo Valley Family Counseling home"
+          <a
+            href={mayaLinks.home}
+            className="shrink-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
+            aria-label="Dr. Maya Reynolds, PsyD home"
           >
-            <Image
-              src={LOGO_SRC}
-              alt="Conejo Valley Family Counseling"
-              width={3007}
-              height={878}
-              priority
-              sizes="(max-width: 767px) 52vw, (max-width: 1200px) 23vw, 300px"
-              className="h-auto w-[min(52vw,230px)] md:w-[clamp(180px,21vw,300px)]"
-            />
-          </Link>
+            <Wordmark />
+          </a>
 
           <nav
-            ref={desktopNavRef}
             aria-label="Primary navigation"
-            className="hidden min-w-0 flex-1 items-center justify-end gap-3 md:flex lg:gap-5 xl:gap-7"
+            className="hidden min-w-0 flex-1 items-center justify-end gap-4 md:flex lg:gap-7"
           >
-            <a
-              href="/therapists-newbury-park"
-              className="rounded-sm px-1 py-3 text-[13px] font-medium tracking-[0.06em] transition-colors hover:text-[#86b3b3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b2b2b]"
-            >
-              About
-            </a>
-
-            {navigationFolders.map((folder) => {
-              const isOpen = openDropdown === folder.id;
-              const dropdownId = `desktop-dropdown-${folder.id}`;
-
-              return (
-                <div key={folder.id} className="relative">
-                  <button
-                    type="button"
-                    aria-controls={dropdownId}
-                    aria-expanded={isOpen}
-                    aria-haspopup="true"
-                    className="inline-flex items-center gap-1 rounded-sm px-1 py-3 text-[13px] font-medium tracking-[0.06em] transition-colors hover:text-[#86b3b3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b2b2b]"
-                    onClick={() => setOpenDropdown(isOpen ? null : folder.id)}
-                  >
-                    {folder.label}
-                    <DownArrow
-                      className={`h-3.5 w-3.5 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                    />
-                  </button>
-
-                  <div
-                    id={dropdownId}
-                    className={`absolute top-full left-1/2 z-50 min-w-[220px] -translate-x-1/2 border-t border-[#2b2b2b]/20 bg-[#fcf4ee] px-5 py-3 shadow-[0_12px_30px_rgba(43,43,43,0.12)] transition-[visibility,opacity,transform] duration-200 ${
-                      isOpen
-                        ? "visible translate-y-0 opacity-100"
-                        : "invisible -translate-y-1 opacity-0"
-                    }`}
-                    aria-hidden={!isOpen}
-                  >
-                    <ul className="space-y-0.5">
-                      {folder.items.map((item) => (
-                        <li key={item.href}>
-                          <a
-                            href={item.href}
-                            tabIndex={isOpen ? 0 : -1}
-                            className="block rounded-sm px-2 py-2 text-[13px] leading-snug transition-colors hover:bg-white hover:text-[#86b3b3] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2b2b2b]"
-                            onClick={() => setOpenDropdown(null)}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              );
-            })}
-
-            <a
-              href="/faqs"
-              className="rounded-sm px-1 py-3 text-[13px] font-medium tracking-[0.06em] transition-colors hover:text-[#86b3b3] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#2b2b2b]"
-            >
-              FAQs
-            </a>
+            {navigationItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="rounded-sm px-1 py-3 text-[13px] font-medium tracking-[0.06em] transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#263a43]"
+              >
+                {item.label}
+              </a>
+            ))}
           </nav>
 
           <a
-            href="/contact"
-            className="hidden shrink-0 rounded-sm border border-[#2b2b2b] px-5 py-3 text-[12px] font-medium tracking-[0.14em] transition-colors hover:bg-[#2b2b2b] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b] md:inline-flex"
+            href={mayaLinks.contact}
+            className="hidden shrink-0 rounded-sm border border-[#263a43] px-5 py-3 text-[12px] font-medium tracking-[0.14em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:inline-flex"
           >
-            Contact
+            Start here
           </a>
 
           <button
@@ -282,14 +149,10 @@ export default function Navbar() {
             aria-controls="mobile-menu"
             aria-expanded={mobileMenuOpen}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
-            className="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b] md:hidden"
-            onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}
+            className="ml-auto inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:hidden"
+            onClick={() => setMobileMenuOpen((isOpen) => !isOpen)}
           >
-            {mobileMenuOpen ? (
-              <CloseIcon className="h-7 w-7" />
-            ) : (
-              <MenuIcon className="h-6 w-7" />
-            )}
+            {mobileMenuOpen ? <CloseIcon className="h-7 w-7" /> : <MenuIcon className="h-6 w-7" />}
             <span className="sr-only">{mobileMenuOpen ? "Close menu" : "Open menu"}</span>
           </button>
         </div>
@@ -304,32 +167,26 @@ export default function Navbar() {
           className="fixed inset-0 z-50 md:hidden"
           onClick={closeMobileMenu}
         >
-          <div className="absolute inset-0 bg-[#2b2b2b]/30" aria-hidden="true" />
+          <div className="absolute inset-0 bg-[#263a43]/35" aria-hidden="true" />
           <div
             ref={mobileMenuRef}
-            className="relative flex max-h-screen min-h-full flex-col overflow-y-auto bg-[#fcf4ee] text-[#2b2b2b]"
+            className="relative flex max-h-screen min-h-full flex-col overflow-y-auto bg-[#f7f8f4] text-[#263a43]"
             onClick={(event) => event.stopPropagation()}
           >
             <div className="flex min-h-[106px] items-center justify-between px-[5vw]">
-              <Link
-                href="/"
-                className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b]"
+              <a
+                href={mayaLinks.home}
+                className="rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
+                aria-label="Dr. Maya Reynolds, PsyD home"
               >
-                <Image
-                  src={LOGO_SRC}
-                  alt="Conejo Valley Family Counseling"
-                  width={3007}
-                  height={878}
-                  sizes="52vw"
-                  className="h-auto w-[min(52vw,230px)]"
-                />
-              </Link>
+                <Wordmark mobile />
+              </a>
               <button
                 ref={closeButtonRef}
                 type="button"
                 aria-label="Close menu"
-                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b]"
+                className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-sm focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
               >
                 <CloseIcon className="h-7 w-7" />
@@ -342,77 +199,26 @@ export default function Navbar() {
             </h2>
 
             <nav aria-label="Mobile primary navigation" className="px-[8vw] pb-10">
-              <ul className="border-t border-[#2b2b2b]/25">
-                <li className="border-b border-[#2b2b2b]/25">
-                  <a
-                    href="/therapists-newbury-park"
-                    className="block py-5 text-[17px] font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2b2b2b]"
-                    onClick={closeMobileMenu}
-                  >
-                    About
-                  </a>
-                </li>
-
-                {navigationFolders.map((folder) => {
-                  const isOpen = mobileFolder === folder.id;
-                  const submenuId = `mobile-submenu-${folder.id}`;
-
-                  return (
-                    <li key={folder.id} className="border-b border-[#2b2b2b]/25">
-                      <button
-                        type="button"
-                        aria-controls={submenuId}
-                        aria-expanded={isOpen}
-                        className="flex w-full items-center justify-between py-5 text-left text-[17px] font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2b2b2b]"
-                        onClick={() => setMobileFolder(isOpen ? null : folder.id)}
-                      >
-                        {folder.label}
-                        <DownArrow
-                          className={`h-5 w-5 transition-transform ${isOpen ? "rotate-180" : ""}`}
-                        />
-                      </button>
-
-                      <ul
-                        id={submenuId}
-                        className={`overflow-hidden pl-4 transition-[max-height,opacity] duration-200 ${
-                          isOpen ? "max-h-[900px] pb-3 opacity-100" : "max-h-0 opacity-0"
-                        }`}
-                        aria-hidden={!isOpen}
-                      >
-                        {folder.items.map((item) => (
-                          <li key={item.href}>
-                            <a
-                              href={item.href}
-                              tabIndex={isOpen ? 0 : -1}
-                              className="block py-2.5 text-[15px] leading-snug focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2b2b2b]"
-                              onClick={closeMobileMenu}
-                            >
-                              {item.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </li>
-                  );
-                })}
-
-                <li className="border-b border-[#2b2b2b]/25">
-                  <a
-                    href="/faqs"
-                    className="block py-5 text-[17px] font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#2b2b2b]"
-                    onClick={closeMobileMenu}
-                  >
-                    FAQs
-                  </a>
-                </li>
+              <ul className="border-t border-[#9babb0]">
+                {navigationItems.map((item) => (
+                  <li key={item.href} className="border-b border-[#9babb0]">
+                    <a
+                      href={item.href}
+                      className="block py-5 text-[17px] font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#263a43]"
+                      onClick={closeMobileMenu}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
               </ul>
 
               <a
-                href="/contact"
-                className="mt-8 inline-flex w-full items-center justify-center border border-[#2b2b2b] px-5 py-4 text-[12px] font-medium tracking-[0.16em] transition-colors hover:bg-[#2b2b2b] hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b]"
+                href={mayaLinks.contact}
+                className="mt-8 inline-flex w-full items-center justify-center border border-[#263a43] px-5 py-4 text-[12px] font-medium tracking-[0.16em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
               >
-                Contact
+                Start here
               </a>
             </nav>
           </div>

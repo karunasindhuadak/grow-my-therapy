@@ -28,22 +28,22 @@
   --font-script: 'PrintedMoments', cursive;
   --font-printed: 'PrintedMoments', cursive;
 
-  /* Brand Colors */
-  --color-primary-light: #a5c4c4;
-  --color-primary-dark: #577c7c;
+  /* Dr. Maya Reynolds palette */
+  --color-primary-light: #b9d0d1;
+  --color-primary-dark: #5f8186;
 
-  --color-secondary-light: #fcf4ee;
-  --color-secondary-dark: #f2d9ca;
+  --color-secondary-light: #f2f4f0;
+  --color-secondary-dark: #ddd5e7;
 
-  --color-accent-light: #f2d9ca;
-  --color-accent-dark: #86b3b3;
+  --color-accent-light: #dfc2b6;
+  --color-accent-dark: #b57f70;
 
   /* Neutrals */
-  --color-neutral-900: #2b2b2b;
-  --color-neutral-700: #515151;
-  --color-neutral-500: #5c605e;
-  --color-neutral-300: #8a8c8b;
-  --color-neutral-100: #f6f4ee;
+  --color-neutral-900: #263a43;
+  --color-neutral-700: #476068;
+  --color-neutral-500: #60767c;
+  --color-neutral-300: #91a2a4;
+  --color-neutral-100: #eef3f0;
   --color-neutral-50: #ffffff;
 
   /* Layout & Spacing */
@@ -100,38 +100,38 @@
 }
 
 :root {
-  --background: #fcf4ee;
-  --foreground: #2b2b2b;
+  --background: #f7f8f4;
+  --foreground: #263a43;
   --card: #ffffff;
-  --card-foreground: #2b2b2b;
+  --card-foreground: #263a43;
   --popover: #ffffff;
-  --popover-foreground: #2b2b2b;
-  --primary: #86b3b3;
+  --popover-foreground: #263a43;
+  --primary: #6f9294;
   --primary-foreground: #FFFFFF;
-  --secondary: #f2d9ca;
-  --secondary-foreground: #2b2b2b;
-  --muted: #f6f4ee;
-  --muted-foreground: #5c605e;
-  --accent: #f2d9ca;
-  --accent-foreground: #2b2b2b;
+  --secondary: #ddd5e7;
+  --secondary-foreground: #263a43;
+  --muted: #eef3f0;
+  --muted-foreground: #60767c;
+  --accent: #c4a092;
+  --accent-foreground: #263a43;
   --destructive: #B91C1C;
-  --border: #d6d0ca;
-  --input: #d6d0ca;
-  --ring: #86b3b3;
-  --radius: 0.125rem;
-  --chart-1: #86b3b3;
-  --chart-2: #f2d9ca;
-  --chart-3: #2b2b2b;
-  --chart-4: #fcf4ee;
-  --chart-5: #5c605e;
+  --border: #c7d2d0;
+  --input: #c7d2d0;
+  --ring: #6f9294;
+  --radius: 0.25rem;
+  --chart-1: #6f9294;
+  --chart-2: #c4a092;
+  --chart-3: #263a43;
+  --chart-4: #f7f8f4;
+  --chart-5: #60767c;
   --sidebar: #ffffff;
-  --sidebar-foreground: #2b2b2b;
-  --sidebar-primary: #86b3b3;
+  --sidebar-foreground: #263a43;
+  --sidebar-primary: #6f9294;
   --sidebar-primary-foreground: #FFFFFF;
-  --sidebar-accent: #f2d9ca;
-  --sidebar-accent-foreground: #2b2b2b;
-  --sidebar-border: #d6d0ca;
-  --sidebar-ring: #86b3b3;
+  --sidebar-accent: #ddd5e7;
+  --sidebar-accent-foreground: #263a43;
+  --sidebar-border: #c7d2d0;
+  --sidebar-ring: #6f9294;
 }
 
 .dark {
@@ -141,31 +141,31 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.205 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: #3A8F90;
+  --primary: #6f9294;
   --primary-foreground: #FFFFFF;
   --secondary: oklch(0.269 0 0);
   --secondary-foreground: oklch(0.985 0 0);
   --muted: oklch(0.269 0 0);
   --muted-foreground: oklch(0.708 0 0);
-  --accent: #C9A96E;
+  --accent: #c4a092;
   --accent-foreground: #FFFFFF;
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
-  --ring: #3A8F90;
-  --chart-1: #3A8F90;
-  --chart-2: #C9A96E;
+  --ring: #6f9294;
+  --chart-1: #6f9294;
+  --chart-2: #c4a092;
   --chart-3: oklch(0.439 0 0);
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --sidebar: oklch(0.205 0 0);
   --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: #3A8F90;
+  --sidebar-primary: #6f9294;
   --sidebar-primary-foreground: #FFFFFF;
   --sidebar-accent: oklch(0.269 0 0);
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: #3A8F90;
+  --sidebar-ring: #6f9294;
 }
 
 @layer base {

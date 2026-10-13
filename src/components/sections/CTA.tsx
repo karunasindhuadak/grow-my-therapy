@@ -1,16 +1,16 @@
 import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
-import { homepage, homepageLinks } from "@/data/homepage";
+import { mayaHomepage, mayaLinks } from "@/data/maya";
 import { cn } from "@/lib/utils";
 
 export default function CTA() {
-  const content = homepage.cta;
+  const content = mayaHomepage.cta;
 
   return (
     <section
       id="contact"
       aria-labelledby="contact-heading"
-      className="overflow-hidden bg-[#fcf4ee] py-16 text-[#2b2b2b] md:py-[6.6vw]"
+      className="overflow-hidden bg-[#f7f8f4] py-16 text-[#263a43] md:py-[6.6vw]"
     >
       <div className="mx-auto grid max-w-[2000px] grid-cols-1 gap-y-10 md:grid-cols-[12%_40%_35%] md:gap-x-[6.5%] md:gap-y-0">
         <div className="relative w-1/2 aspect-[1.15] overflow-hidden md:mt-[7vw] md:aspect-auto md:w-auto">
@@ -23,7 +23,7 @@ export default function CTA() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 bg-[#fcf4ee]/33"
+            className="pointer-events-none absolute inset-0 bg-[#dfc2b6]/22"
           />
         </div>
 
@@ -36,7 +36,7 @@ export default function CTA() {
             className="mb-7 font-heading text-[clamp(2rem,3.25vw,4rem)] leading-[1.15] font-light"
           >
             {content.heading}{" "}
-            <span className="font-printed font-normal text-[#86b3b3]">
+              <span className="font-printed font-normal text-[#6f9294]">
               {content.emphasis}
             </span>
             .
@@ -48,10 +48,10 @@ export default function CTA() {
             {content.instruction}
           </p>
           <a
-            href={homepageLinks.contact}
+            href={mayaLinks.faqs}
             className={cn(
               buttonVariants({ variant: "outline" }),
-              "mt-8 h-auto min-h-12 max-w-full rounded-full border border-[#2b2b2b] bg-transparent px-9 py-4 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#2b2b2b] uppercase hover:bg-[#2b2b2b] hover:text-[#fcf4ee] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#2b2b2b] motion-reduce:transition-none",
+              "mt-8 h-auto min-h-12 max-w-full rounded-full border border-[#263a43] bg-transparent px-9 py-4 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] motion-reduce:transition-none",
             )}
           >
             {content.action}
