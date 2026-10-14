@@ -19,11 +19,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 gap-x-5 gap-y-12 md:ml-[12.5%] md:grid-cols-3">
           {mayaServices.map((service) => (
-            <article
-              key={service.id}
-              aria-labelledby={`service-${service.id}`}
-              className="min-w-0"
-            >
+            <article key={service.id} aria-labelledby={`service-${service.id}`} className="min-w-0">
               <div className="relative aspect-[1.04] overflow-hidden md:aspect-[0.93]">
                 <Image
                   src={service.image}
@@ -45,12 +41,10 @@ export default function Services() {
               >
                 {service.title}
               </h3>
-              <p className="text-[16px] leading-[1.8] font-light">
-                {service.description}
-              </p>
+              <p className="text-[16px] leading-[1.8] font-light">{service.description}</p>
               <a
                 href={mayaLinks.contact}
-                className="mt-5 inline-block rounded-sm border-b border-[#60767c] py-2 text-[13px] font-normal tracking-[0.12em] uppercase transition-colors hover:border-[#b57f70] hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
+                className="relative mt-5 inline-block rounded-sm py-2 text-[13px] font-normal tracking-[0.12em] uppercase transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-left after:scale-x-100 after:bg-[#60767c] after:transition-all after:duration-800 after:ease-out hover:after:scale-x-0 hover:after:bg-[#b57f70] motion-reduce:after:transition-none"
               >
                 Explore this focus
               </a>

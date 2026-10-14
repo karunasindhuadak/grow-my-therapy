@@ -41,9 +41,7 @@ export default function About() {
           <p className="mb-5 text-[13px] leading-[1.8] font-normal tracking-[0.12em] uppercase">
             {content.introduction}
           </p>
-          <p className="text-[16px] leading-[1.8] font-light">
-            {content.firstParagraph}
-          </p>
+          <p className="text-[16px] leading-[1.8] font-light">{content.firstParagraph}</p>
         </div>
         <p className="text-[16px] leading-[1.8] font-light md:col-start-2 md:row-start-3">
           {content.secondParagraph}
@@ -53,7 +51,8 @@ export default function About() {
           href={mayaLinks.approach}
           className={cn(
             buttonVariants({ variant: "link" }),
-            "h-auto min-h-11 w-fit max-w-full rounded-none border-0 border-b border-[#60767c] px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase no-underline hover:border-transparent hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] motion-reduce:transition-none md:col-span-2 md:col-start-1 md:row-start-4",
+            "relative h-auto min-h-11 w-fit max-w-full rounded-none border-0 px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:col-span-2 md:col-start-1 md:row-start-4",
+            "after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-left after:scale-x-100 after:bg-[#60767c] after:transition-transform after:duration-800 after:ease-out hover:after:scale-x-0 motion-reduce:after:transition-none",
           )}
         >
           {content.action}

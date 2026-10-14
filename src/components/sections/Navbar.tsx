@@ -48,7 +48,7 @@ function Wordmark({ mobile = false }: { mobile?: boolean }) {
   return (
     <span className={`flex flex-col ${mobile ? "max-w-[14rem]" : "max-w-[19rem]"}`}>
       <span className="font-heading text-[clamp(1.3rem,2.1vw,2rem)] leading-none font-medium tracking-[0.01em]">
-        Dr. Maya Reynolds, PsyD
+        Dr. Maya Reynolds
       </span>
       <span className="mt-2 text-[9px] leading-[1.4] font-medium tracking-[0.16em] uppercase">
         Licensed Clinical Psychologist
@@ -124,13 +124,13 @@ export default function Navbar() {
 
           <nav
             aria-label="Primary navigation"
-            className="hidden min-w-0 flex-1 items-center justify-end gap-4 md:flex lg:gap-7"
+            className="hidden md:flex min-w-0 flex-1 flex-wrap items-center justify-end gap-x-4 gap-y-1 lg:gap-x-7"
           >
             {navigationItems.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-sm px-1 py-3 text-[13.5px] uppercase font-medium tracking-[0.06em] transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#263a43]"
+                className="whitespace-nowrap rounded-sm px-1 text-[13.5px] uppercase font-medium tracking-[0.06em] transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#263a43]"
               >
                 {item.label}
               </Link>
@@ -139,9 +139,9 @@ export default function Navbar() {
 
           <Link
             href={mayaLinks.contact}
-            className="hidden shrink-0 rounded-sm border border-[#263a43] px-5 py-3 text-[12px] font-medium tracking-[0.14em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:inline-flex"
+            className="hidden shrink-0 items-center justify-center w-[111px] h-[47.6px] rounded-[50%] border border-[#263a43] bg-transparent text-[#263a43] font-muli text-[12.75px] font-normal uppercase tracking-[1.53px] transition-colors duration-100 ease-linear hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:inline-flex"
           >
-            Start here
+            Stay here
           </Link>
 
           <button
@@ -216,10 +216,10 @@ export default function Navbar() {
 
               <Link
                 href={mayaLinks.contact}
-                className="mx-auto mt-8 inline-flex h-[60px] w-[136px] items-center justify-center rounded-full border border-[#263a43] px-5 text-[14px] font-medium tracking-[0.16em] uppercase transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
+                className="mx-auto mt-8 inline-flex h-[48px] w-[210px] items-center justify-center rounded-[50%] border border-[#263a43] bg-transparent text-[13px] font-normal tracking-[0.16em] uppercase text-[#263a43] transition-colors duration-100 ease-linear hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
               >
-                Contact
+                Stay here
               </Link>
             </nav>
           </div>

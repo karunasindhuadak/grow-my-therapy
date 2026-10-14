@@ -7,10 +7,7 @@ export default function Hero() {
   const content = mayaHomepage.hero;
 
   return (
-    <section
-      aria-labelledby="hero-heading"
-      className="overflow-hidden bg-[#f7f8f4] text-[#263a43]"
-    >
+    <section aria-labelledby="hero-heading" className="overflow-hidden bg-[#f7f8f4] text-[#263a43]">
       <div className="mx-auto grid max-w-[2000px] grid-cols-[minmax(0,1fr)_18%] gap-x-[10%] gap-y-10 pt-8 pb-10 md:grid-cols-[35%_45%_8%] md:gap-x-[6%] md:gap-y-0 md:pt-[3vw] md:pb-[6vw]">
         <div className="col-span-2 px-[6vw] md:col-span-1 md:col-start-2 md:row-start-1 md:flex md:flex-col md:px-0">
           <p className="max-w-[28rem] text-[13px] leading-[1.8] font-normal tracking-[0.12em] uppercase">
@@ -22,10 +19,7 @@ export default function Hero() {
               className="font-heading text-[clamp(2.5rem,4.2vw,5rem)] leading-[1.08] font-light"
             >
               {content.heading}{" "}
-              <span className="font-printed font-normal text-[#6f9294]">
-                {content.emphasis}
-              </span>
-              .
+              <span className="font-printed font-normal text-[#6f9294]">{content.emphasis}</span>.
             </h1>
             <p className="mt-6 max-w-[38rem] text-[16px] leading-[1.8] font-light md:text-[17px]">
               {content.description}
@@ -34,7 +28,8 @@ export default function Hero() {
               href={mayaLinks.services}
               className={cn(
                 buttonVariants({ variant: "link" }),
-                "mt-6 h-auto min-h-11 max-w-full rounded-none border-0 border-b border-[#60767c] px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase no-underline hover:border-transparent hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] motion-reduce:transition-none",
+                "relative mt-6 h-auto min-h-11 max-w-full rounded-none border-0 px-0 py-3 text-[13px] font-normal tracking-[0.12em] whitespace-normal text-[#263a43] uppercase no-underline hover:no-underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]",
+                "after:content-[''] after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:origin-left after:scale-x-100 after:bg-[#60767c] after:transition-transform after:duration-800 after:ease-out hover:after:scale-x-0 motion-reduce:after:transition-none",
               )}
             >
               {content.action}
