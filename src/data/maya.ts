@@ -16,9 +16,9 @@ export const mayaHomepage = {
     description:
       "Dr. Maya Reynolds, PsyD is a Licensed Clinical Psychologist offering warm, collaborative therapy for adults in Santa Monica and across California.",
     action: "Explore therapy",
-    image: "/images/maya/dr-maya-reynolds.png",
+    image: "/images/maya/dr-maya-reynolds.webp",
     imageAlt: "Dr. Maya Reynolds, PsyD, Licensed Clinical Psychologist",
-    accentImage: "/images/maya/office-1.jpeg",
+    accentImage: "/images/maya/office-1.webp",
     accentImageAlt: "Quiet therapy office with natural light in Santa Monica",
   },
   welcome: {
@@ -28,13 +28,13 @@ export const mayaHomepage = {
       "Dr. Maya works with adults, especially high-achieving people, entrepreneurs, creatives, and professionals, who feel overwhelmed by anxiety, panic, or the lingering effects of past experiences.",
     secondParagraph:
       "Therapy can be a place to understand what you are carrying, reconnect with yourself, and develop more sustainable ways of living and working. Her warm, collaborative, grounded approach leaves room for reflection, depth, and practical tools.",
-    image: "/images/maya/office-1.jpeg",
+    image: "/images/maya/office-1.webp",
     imageAlt: "Comfortable, uncluttered therapy office with natural light",
   },
   quote: {
     firstSentence: "You do not have to keep pushing through.",
     secondSentence: "Therapy can make room to slow down and feel supported.",
-    image: "/images/maya/office-2.jpeg",
+    image: "/images/maya/office-2.webp",
   },
   about: {
     eyebrow: "ABOUT DR. MAYA REYNOLDS, PSYD",
@@ -45,13 +45,13 @@ export const mayaHomepage = {
     secondParagraph:
       "She integrates CBT, EMDR, mindfulness, and body-oriented techniques. Sessions are paced with an emphasis on safety and stabilization, while helping you understand both the emotional and physiological sides of what you are experiencing.",
     action: "Explore Dr. Maya's approach",
-    image: "/images/maya/dr-maya-reynolds.png",
+    image: "/images/maya/dr-maya-reynolds.webp",
     imageAlt: "Dr. Maya Reynolds, PsyD, in a bright professional portrait",
   },
   honoring: {
     firstLine: "A paced approach for",
     secondLine: "safety, stabilization, and deeper understanding.",
-    image: "/images/maya/office-2.jpeg",
+    image: "/images/maya/office-2.webp",
     imageAlt: "Grounding therapy office with comfortable seating and soft light",
   },
   cta: {
@@ -63,9 +63,9 @@ export const mayaHomepage = {
     instruction:
       "Explore the areas of support and common questions below to learn whether this approach feels like a good fit.",
     action: "View common questions",
-    accentImage: "/images/maya/office-1.jpeg",
+    accentImage: "/images/maya/office-1.webp",
     accentImageAlt: "Sunlight through the windows of a calm therapy office",
-    image: "/images/maya/dr-maya-reynolds.png",
+    image: "/images/maya/dr-maya-reynolds.webp",
     imageAlt: "Dr. Maya Reynolds, PsyD, Licensed Clinical Psychologist",
   },
 } as const;
@@ -85,7 +85,7 @@ export const mayaServices: MayaService[] = [
     title: "Anxiety & Panic Therapy",
     description:
       "Support for adults navigating anxiety, panic, or feeling emotionally on edge, with space to understand what is happening and feel more regulated in daily life.",
-    image: "/images/maya/dr-maya-reynolds.png",
+    image: "/images/maya/dr-maya-reynolds.webp",
     imageAlt: "Dr. Maya Reynolds, PsyD, in a professional portrait",
     imagePosition: "50% 26%",
   },
@@ -94,7 +94,7 @@ export const mayaServices: MayaService[] = [
     title: "Trauma & EMDR Therapy",
     description:
       "Trauma work that is paced carefully, with an emphasis on safety and stabilization as you process the effects of past experiences.",
-    image: "/images/maya/office-1.jpeg",
+    image: "/images/maya/office-1.webp",
     imageAlt: "Natural light filling a quiet therapy office",
     imagePosition: "50% 52%",
   },
@@ -103,7 +103,7 @@ export const mayaServices: MayaService[] = [
     title: "Burnout & Perfectionism Counseling",
     description:
       "For high-achieving adults, entrepreneurs, creatives, and professionals who feel exhausted, disconnected from themselves, or under high internal pressure.",
-    image: "/images/maya/office-2.jpeg",
+    image: "/images/maya/office-2.webp",
     imageAlt: "Comfortable seating in a calm, uncluttered therapy office",
     imagePosition: "50% 53%",
   },

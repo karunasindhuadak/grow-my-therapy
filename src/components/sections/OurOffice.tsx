@@ -38,7 +38,7 @@ export default function OurOffice() {
             <figure>
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
-                  src="/images/maya/office-1.jpeg"
+                  src="/images/maya/office-1.webp"
                   alt="Sunlit therapy room with a gray sofa, cushioned armchair, and tall windows with sheer curtains."
                   fill
                   sizes="(max-width: 767px) 88vw, (max-width: 2000px) 45.1vw, 902px"
@@ -64,7 +64,7 @@ export default function OurOffice() {
           <div className="md:pt-[6vw]">
             <div className="relative ml-[10%] aspect-[4/3] overflow-hidden md:ml-0">
               <Image
-                src="/images/maya/office-2.jpeg"
+                src="/images/maya/office-2.webp"
                 alt="Therapy office seating area with a sofa, armchair, glass table, plant, and neatly arranged bookshelves."
                 fill
                 sizes="(max-width: 767px) 79.2vw, (max-width: 2000px) 32.8vw, 656px"
