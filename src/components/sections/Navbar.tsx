@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { mayaLinks } from "@/data/maya";
+import Link from "next/link";
 
 const navigationItems = [
   { label: "About", href: mayaLinks.about },
@@ -126,22 +127,22 @@ export default function Navbar() {
             className="hidden min-w-0 flex-1 items-center justify-end gap-4 md:flex lg:gap-7"
           >
             {navigationItems.map((item) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-sm px-1 py-3 text-[13px] font-medium tracking-[0.06em] transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#263a43]"
+                className="rounded-sm px-1 py-3 text-[13.5px] uppercase font-medium tracking-[0.06em] transition-colors hover:text-[#5f8186] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#263a43]"
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
-          <a
+          <Link
             href={mayaLinks.contact}
             className="hidden shrink-0 rounded-sm border border-[#263a43] px-5 py-3 text-[12px] font-medium tracking-[0.14em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43] md:inline-flex"
           >
             Start here
-          </a>
+          </Link>
 
           <button
             ref={menuTriggerRef}
@@ -199,12 +200,12 @@ export default function Navbar() {
             </h2>
 
             <nav aria-label="Mobile primary navigation" className="px-[8vw] pb-10">
-              <ul className="border-t border-[#9babb0]">
+              <ul>
                 {navigationItems.map((item) => (
-                  <li key={item.href} className="border-b border-[#9babb0]">
+                  <li key={item.href}>
                     <a
                       href={item.href}
-                      className="block py-5 text-[17px] font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#263a43]"
+                      className="block py-5 text-[17px] uppercase font-medium tracking-[0.05em] focus-visible:outline-2 focus-visible:outline-offset-[-2px] focus-visible:outline-[#263a43]"
                       onClick={closeMobileMenu}
                     >
                       {item.label}
@@ -213,13 +214,13 @@ export default function Navbar() {
                 ))}
               </ul>
 
-              <a
+              <Link
                 href={mayaLinks.contact}
-                className="mt-8 inline-flex w-full items-center justify-center border border-[#263a43] px-5 py-4 text-[12px] font-medium tracking-[0.16em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
+                className="mt-8 uppercase inline-flex w-full items-center justify-center border border-[#263a43] px-5 py-4 text-[12px] font-medium tracking-[0.16em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
               >
                 Start here
-              </a>
+              </Link>
             </nav>
           </div>
         </div>
