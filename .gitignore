@@ -43,3 +43,9 @@ next-env.d.ts
 # documentation
 /docs
 /conejovalleycounseling.com-home-1791880309683
+/submission_screenshots
+
+# local tools / ide
+.opencode
+.opencode/
+
