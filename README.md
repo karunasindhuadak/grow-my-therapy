@@ -6,6 +6,10 @@ The project began as a faithful recreation of the Conejo Valley Family Counselin
 
 > This is an educational portfolio project using an imaginary therapist profile. It is not a production healthcare website and does not provide clinical advice or real appointment booking.
 
+## Live Demo
+
+Visit the deployed website: [grow-my-therapy-ten-puce.vercel.app](https://grow-my-therapy-ten-puce.vercel.app)
+
 ## Project Goals
 
 The assignment has four parts:
@@ -200,10 +204,12 @@ Additional local smoke checks confirmed:
 
 ## Deployment
 
-The project is compatible with Vercel’s standard Next.js deployment flow.
+The current production deployment is available at [grow-my-therapy-ten-puce.vercel.app](https://grow-my-therapy-ten-puce.vercel.app) and is hosted on [Vercel](https://vercel.com/).
+
+To create a new deployment:
 
 1. Push the repository to a public GitHub repository.
-2. Import the repository into [Vercel](https://vercel.com/).
+2. Import the repository into Vercel.
 3. Keep the default Next.js build settings.
 4. Deploy and verify the homepage at the generated URL.
 5. Test the deployed page at desktop and mobile widths before submitting.
@@ -218,12 +224,13 @@ No environment variables are currently required for the static homepage.
 | Dr. Maya Reynolds redesign | Complete |
 | Custom Our Office section | Complete |
 | Five-minute Loom walkthrough | Script prepared; recording pending |
-| Live deployment URL | Pending deployment |
+| Live deployment URL | [View live site](https://grow-my-therapy-ten-puce.vercel.app) |
 | Public GitHub repository | Pending final submission setup |
 
 ## Reference Links
 
 - [Original homepage](https://www.conejovalleycounseling.com/home)
+- [Live demo](https://grow-my-therapy-ten-puce.vercel.app)
 - [Grow My Therapy assignment](https://app.notion.com/p/Stage-2-Internship-Selection-Process-2eb4db5dd6158019b585e9558b13780b)
 - [Dr. Maya Reynolds profile](https://docs.google.com/document/d/1-IJVKEjuqV9CTd9QH16UNHJ7SQfdiweS4oAIZ8vmgHU/edit)
 - [Office image folder](https://drive.google.com/drive/folders/1fbAMSdqGF_ltNc0JiltkpIr_C26kRvLs?usp=drive_link)

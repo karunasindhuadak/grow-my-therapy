@@ -216,10 +216,10 @@ export default function Navbar() {
 
               <Link
                 href={mayaLinks.contact}
-                className="mt-8 uppercase inline-flex w-full items-center justify-center border border-[#263a43] px-5 py-4 text-[12px] font-medium tracking-[0.16em] transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
+                className="mx-auto mt-8 inline-flex h-[60px] w-[136px] items-center justify-center rounded-full border border-[#263a43] px-5 text-[14px] font-medium tracking-[0.16em] uppercase transition-colors hover:bg-[#263a43] hover:text-[#f7f8f4] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#263a43]"
                 onClick={closeMobileMenu}
               >
-                Start here
+                Contact
               </Link>
             </nav>
           </div>
